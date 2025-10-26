@@ -1,28 +1,37 @@
-import { useState } from 'react'
+import React from 'react';
+import HeroSplineCover from './components/HeroSplineCover';
+import FeaturesGrid from './components/FeaturesGrid';
+import AnalyticsOverview from './components/AnalyticsOverview';
+import SecuritySection from './components/SecuritySection';
+import SiteFooter from './components/SiteFooter';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-black font-inter text-white">
+      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40 bg-black/60 border-b border-white/10">
+        <div className="container mx-auto px-6 md:px-10 h-14 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="inline-block h-2 w-2 rounded-full bg-orange-400" />
+            <span className="font-semibold tracking-tight">Flying Passports Admin</span>
+          </div>
+          <nav className="hidden md:flex items-center gap-6 text-sm text-white/70">
+            <a href="#features" className="hover:text-white transition">Features</a>
+            <a href="#security" className="hover:text-white transition">Security</a>
+            <a href="#" className="rounded-md border border-white/20 px-3 py-1.5 hover:bg-white/10 transition">Sign in</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <HeroSplineCover />
+        <FeaturesGrid />
+        <AnalyticsOverview />
+        <SecuritySection />
+      </main>
+
+      <SiteFooter />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
